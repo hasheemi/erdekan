@@ -1,0 +1,21 @@
+
+button pengumunan secondary
+background: linear-gradient(180deg, #F7B75D 0%, #B80059 100%);
+display: flex;
+padding: 8px 24px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+tulisan #fff
+
+button primer1 primary
+display: flex;
+padding: 8px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+flex: 1 0 0;
+background: linear-gradient(180deg, #C50662 0%, #720035 100%);
+
+tulisan #fff ada logo whatsapp
+

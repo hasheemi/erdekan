@@ -1,0 +1,36 @@
+import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+
+import { findParticipant } from '@/data/participants';
+
+import Backdrop from '@/components/announcement/Backdrop';
+import ResultCard from '@/components/announcement/ResultCard';
+
+export const metadata: Metadata = {
+  title: 'Belum Lolos',
+  description: 'Hasil seleksi panitia Ramadan di Kampus 2026.',
+};
+
+type TidakLolosPageProps = {
+  searchParams: Promise<{ nrp?: string }>;
+};
+
+export default async function TidakLolosPage({
+  searchParams,
+}: TidakLolosPageProps) {
+  const { nrp = '' } = await searchParams;
+  const participant = findParticipant(nrp);
+
+  if (!participant || participant.status !== 'tidak-lolos') {
+    redirect('/announcement');
+  }
+
+  return (
+    <main className='relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-12 sm:py-16'>
+      <Backdrop />
+      <div className='layout relative z-10'>
+        <ResultCard participant={participant} />
+      </div>
+    </main>
+  );
+}
