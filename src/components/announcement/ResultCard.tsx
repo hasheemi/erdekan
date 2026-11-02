@@ -139,7 +139,6 @@ export default function ResultCard({
         <div className='mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center'>
           <Link
             href='/announcement'
-            className={buttonVariants({ variant: 'outline' })}
           >
             <ArrowLeft className='size-4' aria-hidden />
             Cek NRP lain
